@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/css/bootstrap.min.css" integrity="sha384-DhY6onE6f3zzKbjUPRc2hOzGAdEf4/Dz+WJwBvEYL/lkkIsI3ihufq9hk9K4lVoK" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../assets/CSS/checkoutp.css" type="text/css">
+    
+
+    <title>Welcome to FarmCart CheckOut</title>
+  </head>
+
+  
+  
+  <body class="bg-light">
+    <%- include('./partials/navbar.ejs') %>
+      
+      <div class="container">
+          <div class="py-5 text-center">
+            <img class ="mb-4 d-block mx-auto" src="https://icons.iconarchive.com/icons/iconsmind/outline/512/Checkout-icon.png" alt="Checkout Cart" width="90" height="90">
+            <h2 class="heading">Welcome to FarmCart Checkout</h2>
+          </div>
+      </div>
+      <br>
+      <form action="" class="needs-validation" novalidate>
+      <div class="container">
+        <div class="row">
+          <div class="col-8">
+            <div class="container">
+                  <h3 class="mb-4">Billing Information</h3>
+                      <div class="row g-3">
+                          <div class="col-md-6">
+                              <label for="firstname" class="form-label">First Name</label>
+                              <input id="firstname" type="text" class="form-control" placeholder="Enter your First Name" required>
+                              <div class="invalid-feedback">This Field is Required</div>
+                          </div>
+                          <div class="col-md-6">
+                              <label for="lastname" class="form-label">Last Name</label>
+                              <input id="lastname" type="text" class="form-control" placeholder="Enter your Last Name" required>
+                              <div class="invalid-feedback">This Field is Required</div>
+                          </div>
+                          <div class="col-md-8">
+                              <label for="address1" class="form-label">Address</label>
+                              <input id="address1" type="text" class="form-control" placeholder="Enter your address" required>
+                              <div class="invalid-feedback">This Field is Required</div>
+                          </div>
+                          
+                        <div class="col-md-4">
+                          <label for="city" class="form-label">City</label>
+                          <input id="city" type="text" class="form-control" placeholder="Enter your City" required>
+                          <div class="invalid-feedback">This Field is Required</div>
+                        </div>
+                        <div class="col-md-4">
+                          <label for="state" class="form-label">State</label>
+                          <select id="state" class="form-control" required> 
+                            <option value=""> Select </option>
+                            <option value="Telangana"> Telangana </option>
+                            <option value="Andhra Pradesh"> Andhra Pradesh</option>
+                            <option value="florida"> Maharashtra </option>
+                            <option value="ohio"> Karnataka </option>
+                            <option value="indiana"> Kerala </option>
+                            <option value="connecticut"> TamilNadu </option>
+                            <option value="maine"> Gujrat </option>
+                            <option value="maryland"> Punjab </option>
+                            <option value="virginia"> Delhi </option>
+                          </select>
+                          <div class="invalid-feedback">This Field is Required</div>
+                        </div>
+                        <div class="col-md-4">
+                          <label for="zip" class="form-label">PinCode</label>
+                          <input id="zip" type="text" class="form-control" placeholder="Enter your PinCode" required>
+                          <div class="invalid-feedback">This Field is Required</div>
+                        </div>
+                      </div>
+      
+                      <hr class="my-4">
+      
+                  <div class="col-12">
+                    <div class="form-check"> 
+                      <input id="sameaddress" type="checkbox" class="form-check-input" onclick="displayShipping()"/>
+                      <label class="form-check-label" for="sameaddress">Same as the Billing Address</label>
+                    </div>
+                  </div>
+                  <br>
+      
+                  <h3 id ="shippingheader" class="mb-4">Shipping Information</h3>
+                    <div id="shipping">
+                      <div class="row g-4">
+                        <div class="col-md-6">
+                            <label for="firstname" class="form-label">First Name</label>
+                            <input id="firstname" type="text" class="form-control" placeholder="Enter your First Name" required>
+                            <div class="invalid-feedback">This Field is Required</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastname" class="form-label">Last Name</label>
+                            <input id="lastname" type="text" class="form-control" placeholder="Enter your Last Name" required>
+                            <div class="invalid-feedback">This Field is Required</div>
+                        </div>
+                        <div class="col-md-8">
+                            <label for="address1" class="form-label">Address</label>
+                            <input id="address1" type="text" class="form-control" placeholder="Enter your address" required>
+                            <div class="invalid-feedback">This Field is Required</div>
+                        </div>
+                        <div class="col-md-4">
+                          <label for="address2" class="form-label">Address 2</label>
+                          <input id="address2" type="text" class="form-control" placeholder="Enter your Address 2">
+                      </div>
+                      <div class="col-md-4">
+                        <label for="city" class="form-label">City</label>
+                        <input id="city" type="text" class="form-control" placeholder="Enter your City" required>
+                        <div class="invalid-feedback">This Field is Required</div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="state" class="form-label">State</label>
+                        <select id="state" class="form-control" required> 
+                          <option value=""> Select </option>
+                          <option value="Telangana"> Telangana </option>
+                          <option value="Andhra Pradesh"> Andhra Pradesh</option>
+                          <option value="florida"> Maharashtra </option>
+                          <option value="ohio"> Karnataka </option>
+                          <option value="indiana"> Kerala </option>
+                          <option value="connecticut"> TamilNadu </option>
+                          <option value="maine"> Gujarat </option>
+                          <option value="maryland"> Punjab </option>
+                          <option value="virginia"> Delhi </option>
+                        </select>
+                        <div class="invalid-feedback">This Field is Required</div>
+                      </div>
+                      <div class="col-md-4">
+                        <label for="zip" class="form-label">PinCode</label>
+                        <input id="zip" type="text" class="form-control" placeholder="Enter your PinCode" required>
+                        <div class="invalid-feedback">This Field is Required</div>
+                      </div>
+                    </div>
+                    </div>
+                      
+      
+                      <hr class="my-5">
+                  
+                  <h3 class="mb-4">Payment Information</h3>
+                  <h5>Accepted Cards</h6>
+                  <div class="icon-container">
+                    <em class="fa fa-cc-visa" style="color:navy;font-size:80px;"></em>
+                    <em class="fa fa-cc-amex" style="color:blue;font-size:80px;"></em>
+                    <em class="fa fa-cc-mastercard" style="color:red;font-size:80px;"></em>
+                    <em class="fa fa-cc-discover" style="color:orange;font-size:80px;"></em>
+                    <em class="fa fa-cc-paypal" style="color:black;font-size:80px"></em>
+                  </div>
+                  <br>
+                  <div class="form-check">
+                    <input id ="card" name="payment" type="radio" class="form-check-input" required checked>
+                    <label for="card">Credit/Debit Card</label>
+                  </div>
+                  <div class="form-check">
+                    <input id ="paypal" name="payment" type="radio" class="form-check-input" required>
+                    <label for="paypal">Paypal</label>
+                  </div>
+                  <div class="form-check">
+                    <input id ="cashondelivery" name="payment" type="radio" class="form-check-input" required>
+                    <label for="cashondelivery">Cash on delivery</label>
+                  </div>
+                  <div class="form-check">
+                    <input id ="UPI" name="payment" type="radio" class="form-check-input" required>
+                    <label for="free">UPI Payment</label>
+                  </div>
+      
+                  <div class="row my-3 gy-3">
+                    <div class="col-md-6">
+                      <label for="paymentname" class="form-label">Full Name</label>
+                      <small class="text-muted">(as displayed on your card)</small>
+                      <input id="paymentname" type="text" class="form-control" placeholder="Enter your as on your Card" required> 
+                      <div class="invalid-feedback"> Credit Card Name Invalid!</div>
+                      <div class="row my-3 gy-3">
+                      <div class="col-md-8">
+                        <label for="email" class="form-label">Email</label>
+                        <small class="text-muted">(Optional)</small>
+                        <input id="email" type="text" class="form-control" placeholder="Enter your Email "> 
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="paymentcard" class="form-label">Credit/Debit Card Number</label>
+                    <small class="text-muted">(16-digit)</small>
+                    <input id="paymentcard" type="text" class="form-control" placeholder="Enter your Credit/Debit Card Number " required>
+                    <div class="invalid-feedback">This Field is Required</div>
+      
+                    <div class="row my-3 gy-3">
+                      <div class="col-md-6">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input id="cvv" type="password" class="form-control" placeholder="Enter your CVV" required> 
+                        <div class="invalid-feedback"> This Field is Required</div>
+                      </div>
+                      <div class="col-md-6">
+                        <label for="expiration" class="form-label">Expiration Month and Year</label>
+                        <input id="expiration" type="text" class="form-control" placeholder="(MM/YY)" required> 
+                        <div class="invalid-feedback"> This Field is Required </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Confirm</button>
+          </div>
+          <div class="col-4">
+            <div class="row-4">
+              <h4 class="d-flex justify-content-between align-item-center">
+                <span class="text-muted" >Shopping Cart</span>
+                <span class="badge bg-secondary squared-pill">5</span>
+              </h4>
+  
+              <ul class="list-group">
+                
+
+              </ul>
+              <br>
+              <button type="submit" class="btn btn-warning btn-lg btn-block">Place Order</button>
+            </div>
+            </div>
+            
+        </div>
+        </div>
+      </div>
+    </form>
+    
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper.js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper.js and Bootstrap JS
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.min.js" integrity="sha384-5h4UG+6GOuV9qXh6HqOLwZMY4mnLPraeTrjT5v07o347pj6IkfuoASuGBhfDsp3d" crossorigin="anonymous"></script>
+    -->
+    <script>
+      var form = document.querySelector('.needs-validation');
+
+      form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+              event.preventDefault();
+              event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+      })
+  </script>
+  </body>
+  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js" integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD" crossorigin="anonymous"></script>
+<script type="text/javascript">
+
+  function displayShipping(){
+    if(document.getElementById("sameaddress").checked === true){
+      document.getElementById("shipping").style.display = "none";
+      document.getElementById("shippingheader").style.display = "none";
+    }
+
+    else{
+      document.getElementById("shipping").style.display = "block";
+      document.getElementById("shippingheader").style.display = "block";
+    }
+  }
+
+  (function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+
+</script>

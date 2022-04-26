@@ -1,0 +1,77 @@
+<!-- Group No 26
+Name: BODAVULA RAKESH
+Roll No: S20200010039 -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CropSuggestion</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/CSS/CropSuggestionStyle.CSS">
+    <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!------------------------------ Nav Bar ------------------------------>
+
+    <%- include('./partials/navbar.ejs') %>
+
+
+        <div class="body">
+
+            <!--------------------------- input/output form --------------------------->
+
+            <div class="container">
+                <h1>Welcome to Crops Suggestion Page</h1>
+                <p>Enter the required inputs and get a list of personalised crops for your needs</p>
+
+                <form onsubmit="return displayresult()" action="/Resultspage" method="post">
+                    <p>Soil Type:
+                        <select name="soilType" id="soiltype" required>
+                            <option value="none">Select the Soil</option>
+                            <option value="Red">Red Soil</option>
+                            <option value="Black">Black Soil</option>
+                            <option value="Sandy">Sandy Soil</option>
+                            <option value="Alluvial">Alluvial Soil</option>
+                        </select>
+                    </p>
+                    <p>Season:
+                        <select name="season" id="season" required>
+                            <option value="none">Select a Season</option>
+                            <option value="Rabi">Rabi</option>
+                            <option value="Kharif">Kharif</option>
+                            <option value="Zaid">Zaid</option>
+                        </select>
+                    </p>
+                    <p>Investment:
+                        <select name="investment" id="investrange" required>
+                            <option value="none">Select the range</option>
+                            <option value="10000">Less than 10k</option>
+                            <option value="90000">Less than 90k</option>
+                            <option value="250000">Less than 2.5L</option>
+                        </select>
+                    </p>
+                    <!-- <p style="visibility: hidden;">Water Availability:
+                    <input type="radio" name="water" id="High" required>
+                    <label for="water">High</label>
+                    <input type="radio" name="water" id="water">
+                    <label for="water">Medium</label>
+                    <input type="radio" name="water" id="Low">
+                    <label for="water">Low</label>
+                </p> -->
+                <button type="submit" class="getcrops-btn">Get Crops</button>
+                    <!-- <button class="getcrops-btn" type="submit" onsubmit="displayresult()">Get Crops</button> -->
+                </form>
+            </div>
+
+
+            
+            <script src="../JS/CropSuggestion.js"></script>
+</body>

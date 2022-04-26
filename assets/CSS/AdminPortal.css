@@ -1,0 +1,94 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header a{
+    color: rgb(24, 23, 23) !important;
+}
+
+header a:hover{
+    color: aqua !important;
+}
+
+body{
+    color: #ffff;
+    background-color: rgb(14, 14, 85);
+    
+    /* background-image: url('../Images/admin_portal_bg.webp'); */
+    /* background-position:center; */
+    /* background-attachment: fixed; */
+}
+
+.admin-title{
+    text-align: center;
+}
+
+
+.main{
+    position: relative;
+}
+
+.dashboard{
+    margin: auto;
+    margin-top: 10vh;
+    width: 60%;
+}
+
+.dashboard table{
+    width: 100%;
+    font-size: 22px;
+    text-align: center;
+    line-height: 3;
+    border: solid 2px orange;
+}
+
+.dashboard td{
+    border: solid 1px orange;
+}
+
+.dashboard th{
+    border: solid 2px orange;
+}
+
+.dashboard input[type='checkbox']{
+    display: none;
+}
+
+.update-product{
+    border: solid 2px #ffff;
+    text-align: center;
+    line-height: 2;
+    display: none;
+}
+
+.drop{
+    height: 50px;
+    font-size: 22px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.drop input[type='button']{
+    font-size: 16px;
+    width: 70px;
+    height: 30px;
+}
+
+table input[type="button"]{
+    background: transparent;
+    border: none;
+    font-size: 17px;
+    cursor: pointer;
+    color: rgb(15, 233, 113);
+}
+
+.toggle-update{
+    /* display: none; */
+}
+
+#esc:checked ~ .update-product {
+    display: block;
+}

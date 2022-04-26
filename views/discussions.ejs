@@ -1,0 +1,63 @@
+<!-- Group number 26 -->
+<!DOCTYPE html>
+<html id="html-toggle">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../assets/CSS/discussions.css">
+    <title>Discussions</title>
+  </head>
+  <body>
+
+    <%- include('./partials/navbar.ejs') %>
+
+      <br>
+      <div class="search-container">
+        <form action="/action_page.php">
+          <input type="text" placeholder="Search" name="search">
+          <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+      </div>
+      <div id="outputArea">
+          <p> >> mike: Welcome to discussions</p>
+          <p> >> john: You can chat here, to express or resolve issues</p>
+          <p> >> dane: Does anyone, know about black dots on cotton crop leaves ..?</p>
+          <p> >> maire: dane, It's good to use Npt fungicide, once check your nearest adviser.</p>
+          <p> >> dane: Thank you mate.., I will check it.</p>
+      </div>
+      <div id="chat">
+      </div>
+
+
+
+
+    <main style="text-decoration:none">
+      <form class="noselect" autocomplete="off" method="post">
+      <div style="display:inline-block!important">
+        <div style="display:inline-block!important" spellcheck="false">
+          <!-- <input type="text" placeholder="name" name="name"/> -->
+          <input type="text" placeholder="message" name="writtentext"/>
+        </div>
+        <div style="display:inline-block!important">
+          <button type="submit"><b>SEND</b></button>
+          <button type="button" name="refreshButton" onClick="window.location.reload()"><b>REFRESH</b></button>
+        </div>
+      </div>
+      </form>
+
+
+      <script>
+        window.scrollTo(0, document.body.scrollHeight || document.documentElement.scrollHeight);
+      </script>
+    </main>
+    
+    
+
+  </body>

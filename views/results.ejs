@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Place</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
+
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="../assets/CSS/Market.css">
+
+
+
+</head>
+
+<body>
+
+    <!-- header section starts  -->
+
+    <%- include('./partials/navbar.ejs') %>
+
+        <div class="search">
+            <a href="" class="logo">Market Place</a>
+
+            <form action="" class="search-bar-form">
+                <input type="search" id="search-bar" placeholder="Search for products">
+                <label for="search-bar" class="fas fa-search"></label>
+            </form>
+        </div>
+
+        <!-- header section ends -->
+
+        <!-- home section starts  -->
+
+        <section class="home" id="home">
+
+            <div class="image">
+                <img src="../assets/Images/main-img.avif" alt="">
+            </div>
+
+            <div class="content">
+                <span>Top Results</span><br><br>
+                <!-- <h2>Get all the assential products for cultivating crops and make our country stay healthy</h2> -->
+            </div>
+
+        </section>
+
+        <!-- home section ends -->
+
+
+        <!-- product section starts  -->
+
+        <section class="product" id="product">
+
+            <h1 class="heading">latest <span>products</span></h1>
+
+            <div class="box-container">
+                <% for(let prod of product) { %>
+                    <a href="/productpage/prod._id">
+                        <div class="box">
+                            <span class="discount">-<%= (((prod.mrp-prod.price)/prod.mrp)*100).toFixed(2) %>%</span>
+                            <img src="<%= prod.img1 %>" alt="">
+                            <h3>
+                                <%= prod.name %>
+                            </h3>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <div class="price"> Rs <%= prod.price %>/- <span> Rs <%= prod.mrp %>/- </span> </div>
+                            <div class="quantity">
+                                <span>quantity : </span>
+                                <input type="number" min="1" max="1000" value="1">
+                                <span> /kg </span>
+                            </div>
+                            <a href="checkout.html" class="btn">Buy Now</a>
+
+
+                            <form action="/addToCart" method="post">
+                                <div style="display: none;">
+                                    <input type="text" name="productId" value="<%= prod._id %>">
+
+                                </div>
+
+                                <!-- <a class="btn">add to cart</a> -->
+                                <input type="submit" value="add To Cart">
+                                <!-- <button type="submit">add to cart</button> -->
+                            </form>
+                        </div>
+                    </a>
+                    <% } %>
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+        <footer class="footer ">
+            <div class="footer-container ">
+                <div class="row ">
+                    <div class="footer-col ">
+                        <h4>company</h4>
+                        <ul>
+                            <li><a href="# ">about us</a></li>
+                            <li><a href="# ">our services</a></li>
+                            <li><a href="# ">privacy policy</a></li>
+                            <li><a href="# ">affiliate program</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col " id="footer-col-online-shop ">
+                        <h4>get help</h4>
+                        <ul>
+                            <li><a href="# ">FAQ</a></li>
+                            <li><a href="# ">shipping</a></li>
+                            <li><a href="# ">returns</a></li>
+                            <li><a href="# ">order status</a></li>
+                            <li><a href="# ">payment options</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col ">
+                        <h4>online shop</h4>
+                        <ul>
+                            <li><a href="# ">seeds</a></li>
+                            <li><a href="# ">fertilizers</a></li>
+                            <li><a href="# ">pesticides</a></li>
+                            <li><a href="# ">equipment</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col ">
+                        <h4>follow us</h4>
+                        <div class="social-links ">
+                            <a href="# "><i class="fab fa-facebook-f "></i></a>
+                            <a href="# "><i class="fab fa-twitter "></i></a>
+                            <a href="# "><i class="fab fa-instagram "></i></a>
+                            <a href="# "><i class="fab fa-linkedin-in "></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- footer section ends -->
+
+</body>

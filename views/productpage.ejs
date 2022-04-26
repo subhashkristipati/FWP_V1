@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/CSS/productpage.css">
+    <style>
+        .top-div img{
+            padding: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <%- include('./partials/navbar.ejs') %>
+
+
+    <div class="productheading">
+        <h1 align="center"><u><%= data.name %></u></h1>
+    </div>
+
+
+
+    <div class="top-div">
+        <div class="top-left">
+            <!-- <img src="../assets/Images/front.jpeg" width="500" height="470"> -->
+            <img src="<%= data.img1 %>" width="450" height="430">
+        </div>
+        <div class="top-right">
+            <h2><b><u>Description</u></b></h2><br>
+            <p><%= data.description %></p>
+        </div>
+    </div>
+
+    <div class="down-div">
+        <div class="down-left">
+            <div class="keys">
+                <h3>
+                    <b>
+                        MRP<br><br>
+                        Quantity<br><br>
+                        Crop<br><br>
+                        Manufacturer<br><br>
+                        Expiry<br><br>	
+                    </b>
+                </h3>
+            </div>
+            <div class="colon">
+                <h3><br>
+                    :<br><br>
+                    :<br><br>
+                    :<br><br>
+                    :<br><br>
+                    :<br><br>
+                </h3>
+            </div>
+            <div class="values">
+                <h3>
+                    <%= data.mrp %><br><br>
+                    <%= data.weight %><br><br>
+                    <%= data.name %><br><br>
+                    <%= data.manufacturer%><br><br>
+                    <%= data.expiry %><br><br>
+                </h3>
+            </div>
+        </div>
+        <div class="down-right">
+            <!-- <img src="../assets/Images/back.jpeg" width="500" height="470"> -->
+            <img src="<%= data.img2 %>" width="450" height="430">
+        </div>
+    </div>
+
+
+</body>

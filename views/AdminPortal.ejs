@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Portal</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/CSS/AdminPortal.css">
+    <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <!------------------------------ Nav Bar ------------------------------>
+
+    <%- include('./partials/navbar.ejs') %>
+
+    <!--------------------------------------  main body ----------------------------------------------------->
+
+    <h1 class="admin-title">AdminPortal</h1>
+
+    <div class="main">
+        <div class="dashboard">
+            <!-- <div class="toggle-update"> -->
+                <input type="checkbox" id="esc">
+                <label for="esc" class="toggle-update"><i class="fa-solid fa-xmark"></i></label>
+            <!-- </div> -->
+            <div class="update-product">
+                <h1 class="product-name">Jowar</h1>
+                <div class="drop">
+                    <p>
+                        Price: <input type="number" class="price" name="price">
+                    </p>
+                    <input type="button" name="save" id="save" value="Save">
+                </div>
+            </div>
+
+
+
+            <table>
+                <tr>
+                    <th>Product</th>
+                    <th>Sales</th>
+                    <th>Price</th>
+                    <th> </th>
+                </tr>
+                <tr>
+                    <td>Bhakthi Cotton</td>
+                    <td>134</td>
+                    <td>480</td>
+                    <td><input type="button" value="Edit" class="edit1" onclick="dropdown('edit1')"></td>
+                </tr>
+                <tr>
+                    <td>Paddy</td>
+                    <td>14</td>
+                    <td>355</td>
+                    <td><input type="button" value="Edit" class="edit2" onclick="dropdown('edit2')"></td>
+                </tr>
+                <tr>
+                    <td>Jowar</td>
+                    <td>567</td>
+                    <td>980</td>
+                    <td><input type="button" value="Edit" class="edit3" onclick="dropdown('edit3')"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    
+
+    <script>
+        function dropdown(cls) {
+            console.log(document.getElementsByClassName('drop td').value);
+            if (document.getElementsByClassName('update-product')[0].style.display === 'none') {
+                document.getElementsByClassName('update-product')[0].style.display = 'block';
+                document.getElementById('esc').style.display = 'block';
+            }
+        }
+    </script>
+</body>

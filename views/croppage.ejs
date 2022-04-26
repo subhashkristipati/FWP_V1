@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop page| <%= crop.name %></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <link rel="stylesheet" href="../assets/CSS/croppage.css">
+</head>
+<style>
+    .description p{
+        line-height: 1.5;
+    }
+</style>
+<body>
+
+    
+    <%- include('./partials/navbar.ejs') %>
+
+
+<!-- ======================== main body starts from here ======================================== -->
+<div class="complete-div">
+    
+<div class="left-div">
+    <div class="description">
+        <h2><b><u>Description</u></b></h2><br>
+        <p> <%= crop.info %>
+            <!-- Cotton is a seed-hair fiber made mostly of cellulose. The fibers are composed of about 87 to 90 percent cellulose (a carbohydrate plant substance), 5 to 8 percent water, and 4 to 6 percent natural impurities.<br><br>
+            <p>Cotton is a soft, fluffy staple fiber that grows in a boll, or protective case, around the seeds of the cotton plants of the genus Gossypium in the mallow family Malvaceae. The fiber is almost pure cellulose, and can contain minor percentages of waxes, fats, pectins, and water. Under natural conditions, the cotton bolls will increase the dispersal of the seeds.</p><br>
+            <p>The plant is a shrub native to tropical and subtropical regions around the world, including the Americas, Africa, Egypt and India. The greatest diversity of wild cotton species is found in Mexico, followed by Australia and Africa.[1] Cotton was independently domesticated in the Old and New Worlds.</p><br>
+            <p>The fiber is most often spun into yarn or thread and used to make a soft, breathable, and durable textile. The use of cotton for fabric is known to date to prehistoric times; fragments of cotton fabric dated to the fifth millennium BC have been found in the Indus Valley Civilization, as well as fabric remnants dated back to 6000 BC in Peru. Although cultivated since antiquity, it was the invention of the cotton gin that lowered the cost of production that led to its widespread use, and it is the most widely used natural fiber cloth in clothing today.</p><br> -->
+        </p>
+    </div>
+
+</div>
+
+
+<div class="right-div">
+    <!-- <img src="../assets/Images/cotton.webp" width="500" height="470"> -->
+    <img src="<%= crop.img %>" width="400" height="380">
+    <h2 align="center"><b><u><%= crop.name %></u></b></h2>
+</div>
+
+</div>
+<p><div class="down-div">
+    <div class="info">
+    <h2><b><u><center>More information</center></u></b></h2><br>
+    </div>
+
+    <div class="details">
+        <div class="keys">
+            <h3><br>
+                <b>Crop name</b><br><br>
+                <b>Soil</b><br><br>
+                <b>Season</b> <br><br>
+                <b>Investment</b><br><br>
+                <b>Water availability</b><br><br>
+                <b>Profit</b> </h3>
+        </div>
+        <div class="colon">
+            <h3><br>
+                :<br><br>
+                :<br><br>
+                :<br><br>
+                :<br><br>
+                :<br><br>
+                :<br><br>
+            </h3>
+        </div>
+        <div class="values">
+            <h3><br>
+                <%= crop.name %><br><br>
+                <%= crop.soil %><br><br>
+                <% crop.season.forEach(tmp=>{ %>
+                    <%= tmp %>,
+                <% }) %><br><br>
+                <%= crop.investment %>Rs/Hectare<br><br>
+                <%= crop.waterReq %> litres/hectare<br><br>
+                <%= crop.profit %>Rs/Hectare<br><br>
+            </h3>
+        </div>
+    </div>
+</div>
+
+
+</body>
