@@ -13,7 +13,7 @@
 
 ## Instructions to Run the Code: 
 
-### Go to Project1 folder and install all modules using ```npm init -y``` then run ```server.js``` file using
+### Go to root folder and install all modules using ```npm init -y``` then run ```server.js``` file using
 
 ```node server.js``` or ``` npm start ```
 
