@@ -9,7 +9,7 @@ const Seller = require('./model/seller')
 const bcrypt = require('bcryptjs')
 const jwt = require('jsonwebtoken')
 const Cart = require('./model/cart')
-const port = 9999
+const port = process.env.PORT || 9999
 
 const JWT_SECRET = 'aorkdaoeubboirgdroue2xb3rcgtntmckhoeu'
 
@@ -20,7 +20,7 @@ const JWT_SECRET = 'aorkdaoeubboirgdroue2xb3rcgtntmckhoeu'
 const app = express()
 const dbURL = 'mongodb+srv://FFSD1:ffsd1@ffsd1.ooswv.mongodb.net/Data?retryWrites=true&w=majority'
 mongoose.connect(dbURL)
-        .then((res) => app.listen(port, () => { console.log(`listening at ${port}\nhttp://localhost:9999/`)}))
+        .then((res) => app.listen(port, () => { console.log(`listening at ${port}\nhttp://localhost:${port}/`)}))
         .catch((err) => {console.log(err)})
 
 
