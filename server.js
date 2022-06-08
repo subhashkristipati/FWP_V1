@@ -1,7 +1,6 @@
 const express = require('express')
 // const path = require('path')
 const bodyParser = require('body-parser')
-// const morgan = require('morgan')
 const mongoose = require('mongoose')
 const User = require('./model/user')
 const Crop = require('./model/crop')
