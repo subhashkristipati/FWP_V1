@@ -1,9 +1,8 @@
 const mongoose = require('mongoose')
 
 const cart = new mongoose.Schema({
-    prod_id: {type: String,
-        unique: [true,'Item already in cart']
-    },
+    prod_id: {type: String},
+    user_id: {type: String},
     name : {type: String},
     quantity : {type: Number},
     price: {type: Number},
