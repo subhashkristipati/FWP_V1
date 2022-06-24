@@ -14,7 +14,7 @@ module.exports.Cart_get = async (req, res) => {
         user = jwt.verify(req.cookies.jwt_seller, JWT_Secret)
     }
     const data = await Cart.find({ user_id: user.id }).lean()
-    res.render('Cart', { data })
+    res.render('cart', { data })
 }
 
 
