@@ -16,7 +16,7 @@ module.exports.login_get = async (req, res) => {
     // console.log(seller)
     if (req.cookies.jwt_seller) return res.redirect('/AdminPortal')
     if (req.cookies.jwt_user) return res.redirect('/dashboard')
-    res.render('login')
+    res.render('Login')
 }
 
 module.exports.signup_get = (req, res) => {
