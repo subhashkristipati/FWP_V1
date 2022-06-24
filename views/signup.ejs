@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
+    <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
+    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
+    <link rel="stylesheet" href="/CSS/signup.css">
+</head>
+
+<body>
+
+    <%- include('./partials/navbar.ejs') %>
+
+
+        <div class="center">
+
+            <div class="signup_div">
+                <h1>Signup</h1>
+
+
+                <form onsubmit="return validate()" action="/signup" method="post" id="signup-form">
+                    <div class="txt-field">
+                        <input type="text" name="email" required class="signup-email">
+                        <span></span>
+                        <label>Email id</label>
+                    </div>
+                    <div class="txt-field">
+                        <input type="text" name="name" class="signup-full-name" required>
+                        <span></span>
+                        <label>Full Name</label>
+                    </div>
+                    <div class="txt-field">
+                        <input type="text" name="username" class="signup-username-input" required>
+                        <span></span>
+                        <label>Username</label>
+                    </div>
+                    <div class="txt-field">
+                        <input type="password" name="password" class="signup-password-input" required>
+                        <span></span>
+                        <label>Password</label>
+                    </div>
+                    <div class="txt-field">
+                        <input type="password" name="confrmPassword" class="signup-password-input-confirm" required>
+                        <span></span>
+                        <label>Confirm Password</label>
+                    </div>
+                    <div class="error"></div>
+                    <!-- <input type="submit" value="Signup"> -->
+                    <button type="submit">Signup</button>
+                    <div class="signup_link">Already have an account? <a href="/login"> Login</a></div>
+                </form>
+            </div>
+        </div>
+
+        <script>
+            // FrontEnd Validation
+            function validate(){
+                const form = document.getElementById('signup-form')
+                const email = form.email.value
+                const name = form.name.value
+                const username = form.username.value
+                const password = form.password.value
+                const confrmPassword = form.confrmPassword.value
+
+                const Error = document.querySelector('.error')
+
+                if(!email.includes('@') || !email.includes('.')){
+                    Error.textContent = "Invalid Email"
+                    return false
+                }
+                else if(username.length < 6){
+                    Error.textContent = "Username should have a min length of 6"
+                    return false;
+                }
+                else if(name.length < 6){
+                    Error.textContent = "Name should have a min length of 6"
+                    return false;
+                }
+                else if (password.length < 8) {
+                    Error.textContent = "Password should have a min length of 8"
+                    return false;
+                }
+
+                if(password != confrmPassword){
+                    Error.textContent = "Passwords didnt match"
+                    return false;
+                }
+                return true;
+            }
+        </script>
+</body>

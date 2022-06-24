@@ -1,7 +1,6 @@
 const mongoose = require('mongoose')
 
-const crops = new mongoose.Schema({
-    // _id : {type: Number, required: true},
+const cropSchema = new mongoose.Schema({
     name: {type: String,required: true},
     soil: {type: String,required: true},
     season: {type: Array,required: true},
@@ -13,6 +12,6 @@ const crops = new mongoose.Schema({
     img: {type: String,required: true}
 },{collection: 'crops',timestamps: true})
 
-const Crop = mongoose.model('Crop',crops)
+const Crop = mongoose.model('Crop',cropSchema)
 
 module.exports = Crop

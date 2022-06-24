@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product page</title>
+    <title>Product page | <%= title %></title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
-    <link rel="stylesheet" href="../assets/CSS/productpage.css">
+    <link rel="stylesheet" href="/CSS/productpage.css">
     <style>
         .top-div img{
             padding: 40px;
@@ -27,7 +27,7 @@
 
     <div class="top-div">
         <div class="top-left">
-            <!-- <img src="../assets/Images/front.jpeg" width="500" height="470"> -->
+            <!-- <img src="Images/front.jpeg" width="500" height="470"> -->
             <img src="<%= data.img1 %>" width="450" height="430">
         </div>
         <div class="top-right">
@@ -69,7 +69,7 @@
             </div>
         </div>
         <div class="down-right">
-            <!-- <img src="../assets/Images/back.jpeg" width="500" height="470"> -->
+            <!-- <img src="Images/back.jpeg" width="500" height="470"> -->
             <img src="<%= data.img2 %>" width="450" height="430">
         </div>
     </div>

@@ -1,29 +1,28 @@
 {
-  "dependencies": {
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.20.0",
-    "ejs": "^3.1.8",
-    "express": "^4.18.1",
-    "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.3.6",
-    "nodemon": "^2.0.16"
-  },
-  "scripts": {
-    "start": "nodemon server.js"
-  },
-  "name": "farmers-web-portal",
-  "description": "```node server.js``` or ``` npm start ```",
+  "name": "fwwp",
   "version": "1.0.0",
+  "description": "```node server.js``` or ``` npm start ```",
   "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rakeshbodavula/Farmers-Web-Portal.git"
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "dev" : "nodemon server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rakeshbodavula/Farmers-Web-Portal/issues"
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.0",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.4",
+    "validator": "^13.7.0"
   },
-  "homepage": "https://github.com/rakeshbodavula/Farmers-Web-Portal#readme"
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
 }

@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+.about_main_div{
+    font-family: 'Poppins', sans-serif;
+
+}
+
+.section {
+    width: 100%;
+    min-height: 100vh;
+    background-color: antiquewhite;
+}
+
+.container {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.content-section {
+    float: left;
+    width: 55%;
+}
+
+.image-section {
+    float: right;
+    width: 40%;
+}
+
+.image-section img {
+    width: 500px;
+    height: 500px;
+}
+
+.content-section .title {
+    text-transform: uppercase;
+    font-size: 28px;
+}
+
+.content-section .content h3 {
+    margin-top: 20px;
+    /* color: antiquewhite; */
+    font-size: 21px;
+}
+
+.content-section .content p {
+    margin-top: 10px;
+    font-family: sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.content-section .content .button {
+    margin-top: 30px;
+}
+
+.content-section .content .button a {
+    background-color: antiquewhite;
+    padding: 12px 40px;
+    text-decoration: none;
+    color: antiquewhite;
+    font-size: 25px;
+    letter-spacing: 1.5px;
+}
+
+.content-section .content .button a:hover {
+    background-color: #a52a2a;
+    color: #fff;
+}
+
+.content-section .social {
+    margin: 40px 40px;
+}
+
+.content-section .social i {
+    color: #a52a2a;
+    font-size: 30px;
+    padding: 0px 10px;
+}
+
+.content-section .social i:hover {
+    color: green;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+        display: block;
+        margin: auto;
+        padding-top: 50px;
+    }
+    .content-section {
+        float: none;
+        width: 100%;
+        display: block;
+        margin: auto;
+    }
+    .image-section {
+        float: none;
+        width: 100%;
+    }
+    .image-section img {
+        width: 500px;
+        height: 500px;
+        display: block;
+        margin: auto;
+    }
+    .content-section .title {
+        text-align: center;
+        font-size: 19px;
+    }
+    .content-section .content .button {
+        text-align: center;
+    }
+    .content-section .content .button a {
+        padding: 9px 30px;
+    }
+    .content-section .social {
+        text-align: center;
+    }
+}
+
+.container-1 {
+    position: relative;
+    width: 320px;
+    margin: 100px auto 0 auto;
+    perspective: 2000px;
+    top: 30vh;
+    background: antiquewhite;
+}
+
+.carousel {
+    position: absolute;
+    width: 100%;
+    height: 100px;
+    transform-style: preserve-3d;
+    animation: rotate360 20s infinite forwards linear;
+}
+
+.carousel__face {
+    position: absolute;
+    width: 300px;
+    height: 187px;
+    top: 20px;
+    left: 10px;
+    right: 10px;
+    background-size: cover;
+    box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.1);
+    display: flex;
+    color: #fff;
+}
+
+span {
+    margin: auto;
+    font-size: 20px;
+}
+
+.carousel__face:nth-child(6) {
+    background-image: url("/Images/AboutUs_Images/subhash3.jpg");
+    transform: rotateY( 0deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(3) {
+    background-image: url("/Images/AboutUs_Images/rakesh.jpg");
+    transform: rotateY( 60deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(4) {
+    background-image: url("/Images/AboutUs_Images/sharan.jpg");
+    transform: rotateY( 120deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(5) {
+    background-image: url("/Images/AboutUs_Images/karthik.jpg");
+    transform: rotateY(180deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(2) {
+    background-image: url("https://images.pexels.com/photos/969679/pexels-photo-969679.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    transform: rotateY(240deg) translateZ(430px);
+}
+
+.carousel__face:nth-child(7) {
+    background-image: url("/Images/AboutUs_Images/jodd.jpg");
+    background-position: top;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    transform: rotateY(300deg) translateZ(430px);
+}
+.carousel__face:nth-child(1) {
+    transform: rotateY(300deg) translateZ(430px);
+}
+
+@keyframes rotate360 {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+}
+
+.names-div{
+    position: relative;
+}
+
+.names {
+    margin: auto;
+    position: relative;
+    left: -250px;
+    top: 600px;
+    padding: 0 100px 100px 100px;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+
+
+/* --------------------------- footer -----------------------------  */
+
+
+.footer-container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    background-color: #24262b;
+    padding: 70px 0;
+    position: relative;
+    top: 550px;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 10;
+    bottom: -15px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+    text-align: left;
+    padding-left: 80px
+}
+
+#footer-col-online-shop ul li a {
+    padding-left: 100px;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 88px;
+}
+
+#footer-col-online-shop ul li a:hover {
+    padding-left: 108px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+
+
+
+.fa-facebook-f,.fa-linkedin-in{
+    color: #5393fa;
+}
+
+.fa-twitter{
+    color: rgba(29,161,242,1.00);
+}
+
+.fa-instagram{
+    color: rgb(189, 63, 84);
+}   

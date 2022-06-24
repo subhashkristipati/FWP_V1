@@ -13,10 +13,12 @@
 
 ## Instructions to Run the Code: 
 
-### Go to root folder and install all modules using ```npm init -y``` then run ```server.js``` file using
+### Go to Project1 folder and install all modules using ```npm init -y``` then run ```server.js``` file using
 
 ```node server.js``` or ``` npm start ```
 
 ### Then open a browser and type
 
 ```localhost:9999``` 
+
+## GitHub Repo: ```https://github.com/rakeshbodavula/Farmers-Web-Portal```

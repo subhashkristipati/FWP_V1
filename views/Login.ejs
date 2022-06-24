@@ -10,80 +10,61 @@
         href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
     <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
-    <link rel="stylesheet" href="../assets/CSS/Login.css">
+    <link rel="stylesheet" href="/CSS/Login.css">
 </head>
 
 <body>
 
     <%- include('./partials/navbar.ejs') %>
 
+        <div class="center">
+            <div class="login_div ">
+                <h1>Login</h1>
 
-
-
-    <div class="center">
-
-        <div class="login_div ">
-            <h1>Login</h1>
-            <form name="LoginForm" id="login-form">
-                <div class="txt-field">
-                    <input type="text"  class="login-username" required>
-                    <span></span>
-                    <label>Username</label>
-                </div>
-                <div class="txt-field">
-                    <input type="password" required class="login-password">
-                    <span></span>
-                    <label>Password</label>
-                </div>
-                <div class="pass"><a href="">Forgot Password?</a></div>
-                <input type="submit" value="Login">
-                <div class="signup_link">Not a member? <a href="#" onclick="displaySignup()"> Signup</a>
-                </div>
-            </form>
+                <form onsubmit="return validate()" action="/login" method="post" id="login-form">
+                    <div class="txt-field">
+                        <input type="text" name="email" class="login-username" required>
+                        <span></span>
+                        <label>Username or email</label>
+                    </div>
+                    <div class="txt-field">
+                        <input type="password" name="password" class="login-password" required>
+                        <span></span>
+                        <label>Password</label>
+                    </div>
+                    <div class="error"></div>
+                    <div class="pass"><a href="/forgotPassword">Forgot Password?</a></div>
+                    <!-- <input type="submit" value="Login"> -->
+                    <button type="submit" class="btn">Login</button>
+                    <div class="signup_link">Not a member? <a href="/signup"> Signup</a>
+                    </div>
+                </form>
+            </div>
         </div>
+        <script>
+            function validate(){
+                const form = document.getElementById('login-form')
+                const email = form.email.value
+                const password = form.password.value
 
+                const Error = document.querySelector('.error')
 
-        <div class="signup_div">
-            <h1>Signup</h1>
-            <form id="signup-form">
-                <div class="txt-field">
-                    <input type="text" required class="signup-email">
-                    <span></span>
-                    <label>Email id</label>
-                </div>
-                <div class="txt-field">
-                    <input type="text" class="signup-full-name" required>
-                    <span></span>
-                    <label>Full Name</label>
-                </div>
-                <!-- <div class="txt-field">
-                    <input type="text" required>
-                    <span></span>
-                    <label>Last Name</label>
-                </div> -->
-                <div class="txt-field">
-                    <input type="text" class="signup-username-input" required>
-                    <span></span>
-                    <label>Username</label>
-                </div>
-                <div class="txt-field">
-                    <input type="password" class="signup-password-input" required>
-                    <span></span>
-                    <label>Password</label>
-                </div>
-                <div class="txt-field">
-                    <input type="password" class="signup-password-input-confirm" required>
-                    <span></span>
-                    <label>Confirm Password</label>
-                </div>
-                <input type="submit" value="Signup">
-                <div class="signup_link">Already have an account? <a href="#" onclick="displayLogin()"> Login</a></div>
-            </form>
-        </div>
+        
+                if(email.length < 6){
+                    Error.textContent = "Username or email should have a min length of 6"
+                    return false;
+                }
+                else if (password.length < 8) {
+                    Error.textContent = "Password should have a min length of 8"
+                    return false;
+                }
+                return true;
+            }
 
-
-
-
-    </div>
-    <script src="../JS/Login.js"></script>
+            // const form = document.getElementById('login-form')
+            // form.addEventListener('submit',async (event)=>{
+            //     event.preventDefault()
+            //     return validate()
+            // })
+        </script>
 </body>

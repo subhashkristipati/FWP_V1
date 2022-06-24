@@ -9,11 +9,11 @@
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
-    <link rel="stylesheet" href="../assets/CSS/ChatBot.CSS">
+    <link rel="stylesheet" href="/CSS/ChatBot.CSS">
     <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body onload="makePageActive()">
    
     <%- include('./partials/navbar.ejs') %>
 
@@ -29,10 +29,14 @@
             </ul>
         </div>
         <div class="image">
-            <img src="../assets/Images/earthworm.png" alt="earthworm" class="earthworm-img">
+            <img src="Images/earthworm.png" alt="earthworm" class="earthworm-img">
         </div>
     </div>
 
     
-
+    <script>
+        function makePageActive(){
+            document.querySelector('.ChatBot').classList.add('active-page')
+        }
+    </script>
 </body>

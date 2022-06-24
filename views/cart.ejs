@@ -1,19 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Cart</title>
+    <link rel="stylesheet" type="text/css"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/CSS/cart.css">
 </head>
+
 <body>
-    <h1>My Cart: </h1>
-    <% if(data.length>0){ %>
-        <% data.forEach(item=>{ %>
-            <img src="<%= item.img %>">
-            <h3><%= item.name %></h3><span><%= item.price %> Rs</span><br>
-            <h5><%= item.quantity %> Kg</h5><br><br>
-        <% }) %>
-    <% } %>
+    <%- include('./partials/navbar.ejs') %>
+
+        <div class="container">
+            <h1>Shopping Cart</h1>
+            <div class="cart">
+                <div class="products">
+                    <% if(data.length>0){ %> <% data.forEach(item=>{ %>
+                            <div class="product">
+                                <a href="/productpage/<%= item.prod_id %>" target="_blank">
+                                    <img src="<%= item.img %>" />
+                                </a>   
+                                <div class="product-info">
+                                    <h3 class="product-name">
+                                        <%= item.name %>
+                                    </h3>
+                                    <h4 class="product-price">₹ <%= item.price %>
+                                    </h4>
+                                    <p class="product-quantity">Qnt: <input value=" <%= item.quantity %>" name="quantity"></p>
+                                    <form action="/delete-item" method="post" class="product-remove">   
+                                        <input type="text" name="id" value="<%= item._id %>" hidden>
+                                        <button class="delete_item"><i class="fa fa-trash"
+                                                aria-hidden="true"></i>Delete</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <% }) %>
+                                <% } else{%>
+                                    <div class="else_div">
+                                        <h1>No items in the cart</h1>
+                                        <h3>
+                                            Please visit
+                                            <a href="/Market" style="color: red; text-decoration: none">Market</a>
+                                            to add some items
+                                        </h3>
+                                    </div>
+                                    <% } %>
+
+                </div>
+
+                <div class="cart-total">
+                    <% let total_price = 0 %>
+                    <% let total_mrp = 0 %>
+                    <p>
+                        <span>Total Price</span>
+                        <% if(data.length>0){ %> <% data.forEach(item=>{ %>
+                           <% total_price+= item.price %>
+                           <% total_mrp+= item.mrp %>
+                            <% })} %>
+                        <span>₹ <%= total_price %></span>
+                    </p>
+                    <p>
+                        <span>Number of Items</span>
+                        <span><%= data.length %></span>
+                    </p>
+                    <p>
+                        <span>You Save</span>
+                        <span>₹ <%= total_mrp - total_price %></span>
+                    </p>
+                    <a href="/checkoutpage">Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>

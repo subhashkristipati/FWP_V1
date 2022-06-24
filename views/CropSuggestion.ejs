@@ -1,7 +1,3 @@
-<!-- Group No 26
-Name: BODAVULA RAKESH
-Roll No: S20200010039 -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,18 +9,18 @@ Roll No: S20200010039 -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
-    <link rel="stylesheet" href="../assets/CSS/CropSuggestionStyle.CSS">
     <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/CSS/CropSuggestionStyle.CSS">
 </head>
 
-<body>
-
+<body onload="makePageActive()">
+    
     <!------------------------------ Nav Bar ------------------------------>
-
+    
     <%- include('./partials/navbar.ejs') %>
-
-
-        <div class="body">
+    
+    
+    <div class="body">
 
             <!--------------------------- input/output form --------------------------->
 
@@ -32,7 +28,7 @@ Roll No: S20200010039 -->
                 <h1>Welcome to Crops Suggestion Page</h1>
                 <p>Enter the required inputs and get a list of personalised crops for your needs</p>
 
-                <form onsubmit="return displayresult()" action="/Resultspage" method="post">
+                <form onsubmit="return displayresult()" action="/cropResults" method="post">
                     <p>Soil Type:
                         <select name="soilType" id="soiltype" required>
                             <option value="none">Select the Soil</option>
@@ -72,6 +68,10 @@ Roll No: S20200010039 -->
             </div>
 
 
-            
-            <script src="../JS/CropSuggestion.js"></script>
+            <script>
+                function makePageActive(){
+                    document.querySelector('.CropSuggestion').classList.add('active-page')
+                }
+            </script>
+            <script src="/JS/CropSuggestion.js"></script>
 </body>

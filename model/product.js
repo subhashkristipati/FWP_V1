@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 const productSchema = new mongoose.Schema({
-    _id: {type: Number},
+    // _id: {type: Number},
     category: {type: String, required: true},
     name: {type: String, required: true},
     mrp: {type: Number, required: true},
@@ -22,3 +22,19 @@ const productSchema = new mongoose.Schema({
 const Product = mongoose.model('Product', productSchema)
 
 module.exports = Product
+
+
+
+// Product.create({
+//     category : 'fertilsers',
+//     name : 'cotton',
+//     mrp : 2500,
+//     price : 1000,
+//     sellerId : 1,
+//     manufacturer: 'rakesh',
+//     weight : 5,
+//     stock : true,
+//     img1 : '/Images/corn.jpg',
+//     description : 'this is cotton corn crop',
+//     expiry : 'dec 2025'
+// }).then(console.log('created')).catch((err)=>console.log(err))

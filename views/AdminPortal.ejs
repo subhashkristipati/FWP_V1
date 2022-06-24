@@ -1,84 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Portal</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
-    <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
-    <link rel="stylesheet" href="../assets/CSS/AdminPortal.css">
-    <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/CSS/AdminPortal.css">
 </head>
-
 <body>
 
-    <!------------------------------ Nav Bar ------------------------------>
+    <!-- <%- include('./partials/navbar.ejs') %> -->
 
-    <%- include('./partials/navbar.ejs') %>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="Images/logo1.jpg" style="height: 40px; width: 40px; border-radius: 50%; margin: 5px;">
+            <span class="logo_name" style="font-size: 18px;"><a href="/">Farmers Web Portal</a></span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="#" class="active">
+                    <i class='bx bx-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <!-- <button onclick="showProducts()"> -->
+                        <i class='bx bx-box'></i>
+                        <span class="links_name">Products</span>
+                    <!-- </button> -->
+                </a>
+            </li>
 
-    <!--------------------------------------  main body ----------------------------------------------------->
+            <li>
+                <a href="#">
+                    <i class='bx bx-cog'></i>
+                    <span class="links_name">Settings</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a href="/logout">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i class='bx bx-menu sidebarBtn'></i>
+                <span class="dashboard">Dashboard</span>
+            </div>
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <i class='bx bx-search'></i>
+            </div>
+            <div class="profile-details">
+                <span class="admin_name">Admin</span>
+                <i class='bx bx-chevron-down'></i>
+            </div>
+        </nav>
 
-    <h1 class="admin-title">AdminPortal</h1>
+        <div class="home-content">
+            <div class="overview-boxes">
+                <div class="box">
+                    <div class="right-side">
+                        <div class="box-topic"><u>Products</u></div><br>
 
-    <div class="main">
-        <div class="dashboard">
-            <!-- <div class="toggle-update"> -->
-                <input type="checkbox" id="esc">
-                <label for="esc" class="toggle-update"><i class="fa-solid fa-xmark"></i></label>
-            <!-- </div> -->
-            <div class="update-product">
-                <h1 class="product-name">Jowar</h1>
-                <div class="drop">
-                    <p>
-                        Price: <input type="number" class="price" name="price">
-                    </p>
-                    <input type="button" name="save" id="save" value="Save">
+                        <li>edit</li>
+
+
+                        <li>update</li>
+
+                        <li>delete</li>
+
+
+                    </div>
                 </div>
+                <i class='bx bx-cart-alt cart'></i>
+            </div>
+
+            <div class="products">
+                <%= JSON.stringify(seller.name) %><br>
+                <%= JSON.stringify(seller.products) %>
             </div>
 
 
 
-            <table>
-                <tr>
-                    <th>Product</th>
-                    <th>Sales</th>
-                    <th>Price</th>
-                    <th> </th>
-                </tr>
-                <tr>
-                    <td>Bhakthi Cotton</td>
-                    <td>134</td>
-                    <td>480</td>
-                    <td><input type="button" value="Edit" class="edit1" onclick="dropdown('edit1')"></td>
-                </tr>
-                <tr>
-                    <td>Paddy</td>
-                    <td>14</td>
-                    <td>355</td>
-                    <td><input type="button" value="Edit" class="edit2" onclick="dropdown('edit2')"></td>
-                </tr>
-                <tr>
-                    <td>Jowar</td>
-                    <td>567</td>
-                    <td>980</td>
-                    <td><input type="button" value="Edit" class="edit3" onclick="dropdown('edit3')"></td>
-                </tr>
-            </table>
-        </div>
-    </div>
-
-    
+    </section>
 
     <script>
-        function dropdown(cls) {
-            console.log(document.getElementsByClassName('drop td').value);
-            if (document.getElementsByClassName('update-product')[0].style.display === 'none') {
-                document.getElementsByClassName('update-product')[0].style.display = 'block';
-                document.getElementById('esc').style.display = 'block';
-            }
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function () {
+            sidebar.classList.toggle("active");
+            if (sidebar.classList.contains("active")) {
+                sidebarBtn.classList.replace("bx-menu", "bx-menu-alt-right");
+            } else
+                sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
         }
+
+        // function showProducts(){
+        //     const toggle = document.querySelector('.products')
+        //     if(toggle.style.display == "none"){
+        //         toggle.style.display = "block"
+        //     }else{
+        //         toggle.style.display = "none";
+        //     }
+        // }
     </script>
 </body>
+</html>
+
+
+
+
