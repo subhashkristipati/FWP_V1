@@ -1,5 +1,3 @@
-# FFSD-1 Project
-
 ## Name of the Web Page: FARMERS WEB PORTAL
 
 ## Hosted Link: [Link](https://fwwp.herokuapp.com/)
