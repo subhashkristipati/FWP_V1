@@ -19,8 +19,8 @@ app.set('view engine','ejs')
 
 
 // database connectivity
-const dbURI = 'mongodb://localhost:27017/ffsd1'
-// const dbURI = 'mongodb+srv://FFSD1:ffsd1@ffsd1.ooswv.mongodb.net/Data?retryWrites=true&w=majority'
+// const dbURI = 'mongodb://localhost:27017/ffsd1'
+const dbURI = 'mongodb+srv://FFSD1:ffsd1@ffsd1.ooswv.mongodb.net/Data?retryWrites=true&w=majority'
 
 const port = process.env.PORT || 9999        
 mongoose.connect(dbURI)
