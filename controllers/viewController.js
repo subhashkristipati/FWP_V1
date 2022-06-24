@@ -99,6 +99,9 @@ module.exports.croppage_id_get = (req, res) => {
 
 module.exports.productpage_id_get = (req, res) => {
     const id = req.params.id
+    if(!id){
+        return res.redirect('/Market')
+    }
     Product.findById(id)
         .then(result => {
             res.render('productpage', {title: result.name, data: result })
