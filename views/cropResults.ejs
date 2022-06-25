@@ -33,6 +33,9 @@
                                     <div class="front">
                                         <!-- <img src="Images/Rice-plant.jpg" alt=""> -->
                                         <img src="<%= crop.img %>" alt="">
+                                        <h1>
+                                            <%= crop.name %>
+                                        </h1>
                                     </div>
 
                                     <div class="back">
@@ -50,10 +53,11 @@
                                 </div>
                             </a>
                         </div>
-                    <% }) %>
-                <% }else{ %>
-                    <h1 style="font-size: 30px; color: #ffff; width: max-content;">No crops Found for the given input :(</h1>
-                <% } %>
+                        <% }) %>
+                            <% }else{ %>
+                                <h1 style="font-size: 30px; color: #ffff; width: max-content;">No crops Found for the
+                                    given input :(</h1>
+                                <% } %>
 
 
 

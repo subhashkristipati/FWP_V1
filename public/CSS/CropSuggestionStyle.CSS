@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -10,19 +11,30 @@ body {
   height: 92vh;
 }
 
+#bgVideo {
+  position: fixed;
+  top: 4vh;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 92%;
+}
+
 
 /*<-------------------------- Total Body except header --------------------------> */
 
 .body {
-  position: relative;
+  position: fixed;
   top: 8vh;
-  background-image: url("../Images/inputFormBG1.jpg");
-  background-position: center;
+  min-height: 92vh;
+  width: 100%;
+  padding: 10vh 0 0vh 0;
+  background:rgba(255, 255, 255, 0.155);
+  /* background-image: url("../Images/inputFormBG1.jpg"); */
+  /* background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed;
-  padding: 10vh 0 0vh 0;
-  min-height: 92vh;
+  background-attachment: fixed; */
 }
 
 /*<-------------------------- Input/Output form --------------------------> */
@@ -32,11 +44,11 @@ body {
   line-height: 8vh;
   width: fit-content;
   margin: auto;
-  padding: 1vh 4vw;
+  padding: 4vh 4vw;
   /* border: solid #ffff; */
   border-radius: 10px;
   color: #ffff;
-  color: black;
+  /* color: black; */
   /* background-color: #868deec2; */
   letter-spacing: 1.1px;
   word-spacing: 1px;
@@ -44,9 +56,17 @@ body {
   font-size: large;
 }
 
-.container h1{
-  color: rgb(99, 99, 99);
+.container h1 {
+  /* color: rgb(99, 99, 99); */
+  color: rgb(221, 99, 0);
+  color: rgb(80, 0, 218);
   font-family: sans-serif;
+}
+
+#main_para{
+  color: #000;
+  font-size: large;
+  font-weight: bold;
 }
 
 
@@ -56,7 +76,8 @@ body {
 }
 
 .container option {
-  background-color: #94c538f1;
+  /* background-color: #94c538f1; */
+  background-color: #83ad33f1;
   color: #ffff;
   font-size: 15px;
   text-align: center;
@@ -81,7 +102,7 @@ body {
 }
 
 .getcrops-btn:hover {
-  box-shadow: 0px 8px 10px #e4e4e4a8;
+  /* box-shadow: 0px 8px 10px #e4e4e4a8; */
   transition: 0.3s linear;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }

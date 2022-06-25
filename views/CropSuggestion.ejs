@@ -20,13 +20,17 @@
     <%- include('./partials/navbar.ejs') %>
     
     
+    <video autoplay loop muted id="bgVideo">
+        <!-- <source src="/Images/CropSuggestionBgVideo.mp4" type="video/mp4"> -->
+        <source src="/Images/video.mp4" type="video/mp4">
+    </video>
+    
     <div class="body">
-
             <!--------------------------- input/output form --------------------------->
 
             <div class="container">
                 <h1>Welcome to Crops Suggestion Page</h1>
-                <p>Enter the required inputs and get a list of personalised crops for your needs</p>
+                <p id="main_para">Enter the required inputs and get a list of personalised crops for your needs</p>
 
                 <form onsubmit="return displayresult()" action="/cropResults" method="post">
                     <p>Soil Type:
@@ -69,6 +73,7 @@
 
 
             <script>
+                document.getElementById('bgVideo').playbackRate=0.9;
                 function makePageActive(){
                     document.querySelector('.CropSuggestion').classList.add('active-page')
                 }
