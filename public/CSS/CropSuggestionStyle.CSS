@@ -11,30 +11,19 @@ body {
   height: 92vh;
 }
 
-#bgVideo {
-  position: fixed;
-  top: 4vh;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 92%;
-}
-
 
 /*<-------------------------- Total Body except header --------------------------> */
 
 .body {
-  position: fixed;
+  position: relative;
   top: 8vh;
   min-height: 92vh;
-  width: 100%;
   padding: 10vh 0 0vh 0;
-  background:rgba(255, 255, 255, 0.155);
-  /* background-image: url("../Images/inputFormBG1.jpg"); */
-  /* background-position: center;
+  background-image: url("../Images/inputFormBG1.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-attachment: fixed; */
+  background-attachment: fixed;
 }
 
 /*<-------------------------- Input/Output form --------------------------> */
@@ -47,8 +36,8 @@ body {
   padding: 4vh 4vw;
   /* border: solid #ffff; */
   border-radius: 10px;
-  color: #ffff;
-  /* color: black; */
+  /* color: #ffff; */
+  color: black;
   /* background-color: #868deec2; */
   letter-spacing: 1.1px;
   word-spacing: 1px;
@@ -57,16 +46,16 @@ body {
 }
 
 .container h1 {
-  /* color: rgb(99, 99, 99); */
-  color: rgb(221, 99, 0);
-  color: rgb(80, 0, 218);
+  color: rgb(99, 99, 99);
+  /* color: rgb(221, 99, 0); */
+  /* color: rgb(80, 0, 218); */
   font-family: sans-serif;
 }
 
-#main_para{
+#main_para {
   color: #000;
-  font-size: large;
-  font-weight: bold;
+  /* font-size: large;
+  font-weight: bold; */
 }
 
 
