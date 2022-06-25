@@ -42,15 +42,15 @@
             </div>
         </div>
         <script>
-            function validate() {
+            function validate(){
                 const form = document.getElementById('login-form')
                 const email = form.email.value
                 const password = form.password.value
 
                 const Error = document.querySelector('.error')
 
-
-                if (email.length < 6) {
+        
+                if(email.length < 6){
                     Error.textContent = "Username or email should have a min length of 6"
                     return false;
                 }
@@ -60,17 +60,6 @@
                 }
                 return true;
             }
-
-
-            function preventBack() {
-                window.history.forward();
-            }
-
-            setTimeout("preventBack()", 0);
-
-            window.onunload = function () { null };
-
-
 
             // const form = document.getElementById('login-form')
             // form.addEventListener('submit',async (event)=>{

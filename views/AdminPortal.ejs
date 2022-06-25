@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +8,6 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/CSS/AdminPortal.css">
 </head>
-
 <body>
 
     <!-- <%- include('./partials/navbar.ejs') %> -->
@@ -29,8 +27,8 @@
             <li>
                 <a href="#">
                     <!-- <button onclick="showProducts()"> -->
-                    <i class='bx bx-box'></i>
-                    <span class="links_name">Products</span>
+                        <i class='bx bx-box'></i>
+                        <span class="links_name">Products</span>
                     <!-- </button> -->
                 </a>
             </li>
@@ -86,7 +84,7 @@
 
             <div class="products">
                 <%= JSON.stringify(seller.name) %><br>
-                    <%= JSON.stringify(seller.products) %>
+                <%= JSON.stringify(seller.products) %>
             </div>
 
 
@@ -104,17 +102,6 @@
                 sidebarBtn.classList.replace("bx-menu-alt-right", "bx-menu");
         }
 
-
-        function preventBack() {
-            window.history.forward();
-        }
-
-        setTimeout("preventBack()", 0);
-
-        window.onunload = function () { null };
-
-
-
         // function showProducts(){
         //     const toggle = document.querySelector('.products')
         //     if(toggle.style.display == "none"){
@@ -125,5 +112,8 @@
         // }
     </script>
 </body>
-
 </html>
+
+
+
+
