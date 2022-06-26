@@ -58,12 +58,12 @@
                 <i class='bx bx-search'></i>
             </div>
             <div class="profile-details">
-                <span class="admin_name">Admin</span>
-                <i class='bx bx-chevron-down'></i>
+                <span class="admin_name"><%= seller.name %></span>
+                <!-- <i class='bx bx-chevron-down'></i> -->
             </div>
         </nav>
 
-        <div class="home-content">
+        <!-- <div class="home-content">
             <div class="overview-boxes">
                 <div class="box">
                     <div class="right-side">
@@ -80,16 +80,15 @@
                     </div>
                 </div>
                 <i class='bx bx-cart-alt cart'></i>
-            </div>
+            </div> -->
+        </section>
 
-            <div class="products">
-                <%= JSON.stringify(seller.name) %><br>
-                <%= JSON.stringify(seller.products) %>
-            </div>
+            <section id="dashboard_section">
+                <h2>Total Products</h2>
+            </section>
 
 
 
-    </section>
 
     <script>
         let sidebar = document.querySelector(".sidebar");

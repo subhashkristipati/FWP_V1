@@ -44,7 +44,7 @@ module.exports.chatbot_get = (req, res) => {
 module.exports.market_get = async (req, res) => {
     if (!req.cookies.jwt_user && !req.cookies.jwt_seller) return res.redirect('/404')
     // const results = await Product.find({})
-    const results = await Product.aggregate([{$sample : {size: 7}}])
+    const results = await Product.aggregate([{$sample : {size: 7}}]) // render 7 items randomly
     res.render('Market', { data: results })
 }
 

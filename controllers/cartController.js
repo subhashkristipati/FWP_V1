@@ -34,8 +34,6 @@ module.exports.addToCart_post = async (req, res) => {
             { prod_id: results.productId }
         ]
     })
-    console.log(user.id)
-    console.log(results.productId)
     if (it) {
         return res.redirect('/Market');
     }
