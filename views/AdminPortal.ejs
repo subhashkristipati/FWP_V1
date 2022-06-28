@@ -151,7 +151,7 @@
                     </a>
                 </div>
 
-                
+
             </section>
 
             <button class="goTop_btn"><a href="#dashboard_section">Back to Top</a></button>
@@ -162,6 +162,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <script>
+
+        function preventBack() {
+            window.history.forward();
+        }
+
+        setTimeout("preventBack()", 0);
+
+        window.onunload = function () { null };
+
+
         const colors1 = ['orangered', 'rgb(119, 53, 225)', 'rgb(255, 3, 255)', 'royalblue']
         const colors2 = ['rgb(253, 200, 181)', 'rgb(207, 177, 255)', 'rgb(255, 192, 250)', 'rgb(173, 173, 255)']
         for (let i = 0; i < 4; i++) {
