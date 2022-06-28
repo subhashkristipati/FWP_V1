@@ -6,7 +6,7 @@ const productSchema = new mongoose.Schema({
     name: {type: String, required: true},
     mrp: {type: Number, required: true},
     price: {type: Number, required: true},
-    sellerId: {type: Number, required: true},
+    sellerId: {type: String, required: true},
     manufacturer: {type: String, required: true},
     weight: {type: Number, required: true},
     stock: {type: Boolean, required: true},
@@ -26,7 +26,7 @@ module.exports = Product
 
 
 // Product.create({
-//     category : 'fertilsers',
+//     category : 'fertilizers',
 //     name : 'cotton',
 //     mrp : 2500,
 //     price : 1000,

@@ -6,7 +6,7 @@ const sellerSchema = new mongoose.Schema({
     email: {type: String, required: true, unique:  true},
     name: {type: String, required: true},
     password: {type: String, required: true},
-    products: {type: Array}
+    // products: {type: Array}
     },
     { collection: 'sellers'}
 )
@@ -21,3 +21,13 @@ sellerSchema.pre('save',async function(next){
 
 const Seller = mongoose.model('sellerSchema', sellerSchema)
 module.exports = Seller
+
+
+
+    // Seller.create ({
+    //     email : "sharan.s20@iiits.in",
+    //     username : "Sharan",
+    //     name : "Sharan Raj",
+    //     password: "Sharan@fwwp",
+    // })
+

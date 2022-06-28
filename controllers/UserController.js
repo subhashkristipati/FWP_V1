@@ -123,12 +123,3 @@ module.exports.signup_post = async (req, res) => {
 //     console.log(seller)
 // }
 
-// const hashPassword = await bcrypt.hash("12345678",12)
-    // Seller.create ({
-    //     email : "rakesh.b20@iiits.in",
-    //     username : "Rakesh",
-    //     name : "Rakesh Bodavula",
-    //     password: "12345678",
-    //     products:["seeds","fertilisers"]
-    // })
-

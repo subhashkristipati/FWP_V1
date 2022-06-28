@@ -1,530 +1,373 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
 }
 
 
+:root {
+    --aside_width: 20vw;
+    --logo_div_height: 12vh;
+    --aside_ul_height: calc(100vh - var(--logo_div_height));
 
-.sidebar {
+    --nav_height: 6vh;
+    --section_height: calc(100vh - var(--nav_height));
+
+    --green: #27ae60;
+    --black: #2c2c54;
+}
+
+/* <------------------------------------------ styling for aside element ---------------------------------------------> */
+
+aside {
+    background-color: rgb(38, 151, 255);
+    float: left;
+    height: 100vh;
+    width: var(--aside_width);
     position: fixed;
-    height: 100%;
-    width: 240px;
-    /* background: #00e394; */
-    background: #2697FF;
-    transition: all 0.5s ease;
+    /* padding: 10px; */
 }
 
-.sidebar.active {
-    width: 60px;
-}
-
-.sidebar .logo-details {
-    height: 80px;
+.logo-details {
     display: flex;
+    /* flex-direction: column; */
+    justify-content: space-evenly;
     align-items: center;
+    text-align: center;
+    height: var(--logo_div_height);
 }
 
-.sidebar .logo-details i {
-    font-size: 28px;
-    font-weight: 500;
+aside a {
+    text-decoration: none;
+    /* font-size: 18px; */
+    font-size: calc(0.8vw + 0.8vh);
+    font-weight: 400;
+    font-family: Poppins, sans-serif;
     color: #fff;
-    min-width: 60px;
-    text-align: center
 }
 
-.sidebar .logo-details .logo_name {
-    color: #fff;
-    font-size: 24px;
-    font-weight: 500;
+.logo-details a {
+    font-size: calc(0.9vw + 0.9vh);
 }
 
-.sidebar .nav-links {
-    margin-top: 10px;
+.logo-details img {
+    height: calc(2vh + 2vw);
+    width: calc(2vh + 2vw);
+    border-radius: 50%;
+    margin: 10px 0;
 }
 
-.sidebar .nav-links li {
-    position: relative;
+aside ul {
+    margin-top: 5vh;
+    /*subtract margin to prevent overflow in height*/
+    height: calc(var(--aside_ul_height) -5vh);
+}
+
+aside li {
+    /* margin-top: 10vh; */
     list-style: none;
-    height: 50px;
+    height: 8vh;
 }
 
-.sidebar .nav-links li a {
+aside li a {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
-    text-decoration: none;
-    transition: all 0.4s ease;
+    transition: all 0.5s ease-in-out;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.sidebar .nav-links li a.active {
+.active {
     background: #00d68b;
-    /* background: #2697FF; */
+    transition: 0.3s ease-in-out;
 }
 
-.sidebar .nav-links li a:hover {
-    background: #e05260;
+aside li a:hover {
+    background-color: #e05260;
 }
 
-.sidebar .nav-links li i {
-    min-width: 60px;
+aside li i {
+    width: 25%;
+    font-size: 1.5vw;
+    color: #fff;
     text-align: center;
-    font-size: 18px;
-    color: #fff;
 }
 
-.sidebar .nav-links li a .links_name {
-    color: #fff;
-    font-size: 15px;
-    font-weight: 400;
-    white-space: nowrap;
-}
-
-.sidebar .nav-links .log_out {
+.log_out {
     position: absolute;
     bottom: 0;
-    background-color: #66b0ff;
-    width: 100%;
+    width: var(--aside_width);
 }
 
 
+/* <------------------------ nav bar styling ----------------------------> */
 
-
-.home-section {
+nav,
+.main_details_container {
     position: relative;
-    background: #f5f5f5;
-    min-height: 100vh;
-    width: calc(100% - 240px);
-    left: 240px;
-    transition: all 0.5s ease;
+    left: var(--aside_width);
+    width: calc(100% - var(--aside_width));
+    overflow: hidden;
 }
 
-.sidebar.active~.home-section {
-    width: calc(100% - 60px);
-    left: 60px;
-}
 
-.home-section nav {
-    display: flex;
-    justify-content: space-between;
-    height: 80px;
-    background: #fff;
-    display: flex;
-    align-items: center;
+nav {
     position: fixed;
-    width: calc(100% - 240px);
-    left: 240px;
-    z-index: 100;
-    padding: 0 20px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-    transition: all 0.5s ease;
+    /* width: 100%; */
+    background-color: rgb(191, 186, 192);
+    height: var(--nav_height);
+    z-index: 2;
 }
 
-.sidebar.active~.home-section nav {
-    left: 60px;
-    width: calc(100% - 60px);
+nav h1 {
+    font-size: calc(1vh + 1vw);
+    line-height: var(--nav_height);
 }
 
-.home-section nav .sidebar-button {
-    display: flex;
-    align-items: center;
-    font-size: 24px;
-    font-weight: 500;
+nav .nav_title {
+    float: left;
+    padding-left: 2vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-nav .sidebar-button i {
-    font-size: 35px;
-    margin-right: 10px;
+nav .nav_name {
+    float: right;
+    padding-right: 2vw;
 }
 
-.home-section nav .search-box {
+
+/* <------------------------------------------ styling for  main-details-container  div ---------------------------------------------> */
+
+
+.main_details_container {
+    /* margin-top: var(--nav_height); */
     position: relative;
-    height: 50px;
-    max-width: 550px;
-    width: 100%;
-    margin: 0 20px;
+    top: var(--nav_height);
 }
 
-nav .search-box input {
-    height: 100%;
-    width: 100%;
-    outline: none;
-    background: #F5F6FA;
-    border: 2px solid #EFEEF1;
-    border-radius: 6px;
-    font-size: 18px;
-    padding: 0 15px;
+.main_details_container section {
+    height: var(--section_height);
+    scroll-margin-top: var(--nav_height);
+
 }
 
-nav .search-box .bx-search {
-    position: absolute;
-    height: 40px;
-    width: 40px;
-    background: #2697FF;
-    right: 5px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 4px;
-    line-height: 40px;
-    text-align: center;
-    color: #fff;
-    font-size: 22px;
-    transition: all 0.4 ease;
-}
 
-.home-section nav .profile-details {
+/* <------------------------------------------ styling for Dashboard Section ---------------------------------------------> */
+
+
+#dashboard_section{
     display: flex;
-    align-items: center;
-    background: #F5F6FA;
-    border: 2px solid #EFEEF1;
-    border-radius: 6px;
-    height: 50px;
-    min-width: 190px;
-    padding: 0 15px 0 2px;
-}
-
-nav .profile-details img {
-    height: 40px;
-    width: 40px;
-    border-radius: 6px;
-    object-fit: cover;
-}
-
-nav .profile-details .admin_name {
-    font-size: 15px;
-    font-weight: 500;
-    color: #333;
-    margin: 0 10px;
-    white-space: nowrap;
-}
-
-nav .profile-details i {
-    font-size: 25px;
-    color: #333;
-}
-
-.home-section .home-content {
-    position: relative;
-    padding-top: 104px;
-    align-items: center;
-}
-
-.home-content .overview-boxes {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 0 20px;
-    margin-bottom: 26px;
-}
-
-.overview-boxes .box {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: calc(100% / 4 - 15px);
-    background: #fff;
-    padding: 15px 14px;
-    border-radius: 12px;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-
-.overview-boxes .box-topic {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-.home-content .box .number {
-    display: inline-block;
-    font-size: 35px;
-    margin-top: -6px;
-    font-weight: 500;
-}
-
-.home-content .box .indicator {
-    display: flex;
-    align-items: center;
-}
-
-.home-content .box .indicator i {
-    height: 20px;
-    width: 20px;
-    background: #8FDACB;
-    line-height: 20px;
-    text-align: center;
-    border-radius: 50%;
-    color: #fff;
-    font-size: 20px;
-    margin-right: 5px;
-}
-
-.box .indicator i.down {
-    background: #e87d88;
-}
-
-.home-content .box .indicator .text {
-    font-size: 12px;
-}
-
-.home-content .box .cart {
-    display: inline-block;
-    font-size: 32px;
-    height: 50px;
-    width: 50px;
-    background: #cce5ff;
-
-    line-height: 50px;
-    text-align: center;
-    color: #66b0ff;
-    border-radius: 12px;
-    margin: -15px 0 0 6px;
-}
-
-.home-content .box .cart.two {
-    color: #2BD47D;
-    background: #C0F2D8;
-}
-
-.home-content .box .cart.three {
-    color: #ffc233;
-    background: #ffe8b3;
-}
-
-.home-content .box .cart.four {
-    color: #e05260;
-    background: #f7d4d7;
-}
-
-.home-content .total-order {
-    font-size: 20px;
-    font-weight: 500;
-}
-
-
-
-
-
-
-
-
-
-/* Responsive Media Query */
-@media (max-width: 1240px) {
-    .sidebar {
-        width: 60px;
-    }
-
-    .sidebar.active {
-        width: 220px;
-    }
-
-    .home-section {
-        width: calc(100% - 60px);
-        left: 60px;
-    }
-
-    .sidebar.active~.home-section {
-        /* width: calc(100% - 220px); */
-        overflow: hidden;
-        left: 220px;
-    }
-
-    .home-section nav {
-        width: calc(100% - 60px);
-        left: 60px;
-    }
-
-    .sidebar.active~.home-section nav {
-        width: calc(100% - 220px);
-        left: 220px;
-    }
-}
-
-@media (max-width: 1150px) {
-    .home-content .sales-boxes {
-        flex-direction: column;
-    }
-
-    .home-content .sales-boxes .box {
-        width: 100%;
-        overflow-x: scroll;
-        margin-bottom: 30px;
-    }
-
-    .home-content .sales-boxes .top-sales {
-        margin: 0;
-    }
-}
-
-@media (max-width: 1000px) {
-    .overview-boxes .box {
-        width: calc(100% / 2 - 15px);
-        margin-bottom: 15px;
-    }
-}
-
-@media (max-width: 700px) {
-
-    nav .sidebar-button .dashboard,
-    nav .profile-details .admin_name,
-    nav .profile-details i {
-        display: none;
-    }
-
-    .home-section nav .profile-details {
-        height: 50px;
-        min-width: 40px;
-    }
-
-    .home-content .sales-boxes .sales-details {
-        width: 560px;
-    }
-}
-
-@media (max-width: 550px) {
-    .overview-boxes .box {
-        width: 100%;
-        margin-bottom: 15px;
-    }
-
-    .sidebar.active~.home-section nav .profile-details {
-        display: none;
-    }
-}
-
-@media (max-width: 400px) {
-    .sidebar {
-        width: 0;
-    }
-
-    .sidebar.active {
-        width: 60px;
-    }
-
-    .home-section {
-        width: 100%;
-        left: 0;
-    }
-
-    .sidebar.active~.home-section {
-        left: 60px;
-        width: calc(100% - 60px);
-    }
-
-    .home-section nav {
-        width: 100%;
-        left: 0;
-    }
-
-    .sidebar.active~.home-section nav {
-        left: 60px;
-        width: calc(100% - 60px);
-    }
-}
-.logo_name a{
-    text-decoration: none;
-    color: #ffff;
-}
-
-/* .logout_btn a{
-    text-decoration: none;
-    font-size: medium;
-    padding: 5px;
-} */
-
-
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header a{
-    color: rgb(24, 23, 23) !important;
-}
-
-header a:hover{
-    color: aqua !important;
-}
-
-body{
-    color: #ffff;
-    background-color: rgb(14, 14, 85);
-    
-}
-
-.admin-title{
-    text-align: center;
-}
-
-
-.main{
-    position: relative;
-}
-
-.dashboard{
-    margin: auto;
-    margin-top: 10vh;
-    width: 60%;
-}
-
-.dashboard table{
-    width: 100%;
-    font-size: 22px;
-    text-align: center;
-    line-height: 3;
-    border: solid 2px orange;
-}
-
-.dashboard td{
-    border: solid 1px orange;
-}
-
-.dashboard th{
-    border: solid 2px orange;
-}
-
-.dashboard input[type='checkbox']{
-    display: none;
-}
-
-.update-product{
-    border: solid 2px #ffff;
-    text-align: center;
-    line-height: 2;
-    display: none;
-}
-
-.drop{
-    height: 50px;
-    font-size: 22px;
-    display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.drop input[type='button']{
-    font-size: 16px;
-    width: 70px;
-    height: 30px;
+
+.graph {
+    /* display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-evenly;
+    align-items: center; */
+    /* background-color: #372d5e; */
+
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    text-align: center;
+    scroll-margin-bottom: 0;
 }
 
-table input[type="button"]{
-    background: transparent;
-    border: none;
-    font-size: 17px;
-    cursor: pointer;
-    color: rgb(15, 233, 113);
+.dashboard_main_heading{
+    font-size: 2rem;
+    text-align: center;
 }
 
-.toggle-update{
-    display: none;
+
+
+
+/* <------------------------------------------ styling for circular progress bar element ---------------------------------------------> */
+
+
+
+.circular_graph {
+    font-size: calc(1vh + 1.5vw);
+    padding: 0 1.5rem;
 }
 
-#esc:checked ~ .update-product {
-    display: block;
-} */
+.circular-progress_3,
+.circular-progress_0,
+.circular-progress_1,
+.circular-progress_2 {
+    height: calc(7vh + 8vw);
+    width: calc(7vh + 8vw);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+}
+
+.circular-progress_3:before,
+.circular-progress_0:before,
+.circular-progress_1:before,
+.circular-progress_2:before {
+    content: "";
+    position: absolute;
+    height: calc(6vh + 7vw);
+    width: calc(6vh + 7vw);
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.value-container_3,
+.value-container_0,
+.value-container_1,
+.value-container_2 {
+    position: relative;
+    /* font-size: 50px; */
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #231c3d;
+}
+
+.circular_graph h1 {
+    padding: 1.8rem 0;
+    font-size: calc(1vh + 1vw);
+    ;
+}
+
+
+/* <------------------------------------------ styling for Dashboard Section Ends here ---------------------------------------------> */
+
+
+
+
+/* <------------------------------------------ styling for Products section ---------------------------------------------> */
+
+
+#products_section {
+    /* background-color: rgb(222, 220, 224); */
+    height: max-content;
+}
+
+.prod_section_main_heading {
+    text-align: center;
+    font-size: 3rem;
+}
+
+.box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 5rem;
+}
+
+.box-container .box {
+    flex: 1 1 16rem;
+    text-align: center;
+    padding: 1.5rem;
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    /* overflow: hidden; */
+    position: relative;
+}
+
+.box-container .box img {
+    height: 10rem;
+}
+
+.box-container .box .discount {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: rgba(0, 255, 0, 0.1);
+    color: var(--green);
+    padding: 0.5rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.1rem;
+}
+
+.box-container a {
+    text-decoration: none;
+    color: #000;
+}
+
+.box-container .box h3 {
+    color: var(--black);
+    font-size: 1.5rem;
+}
+
+
+.box-container .box .price {
+    font-size: 1.2rem;
+    color: #333;
+    padding: 0.5rem 0;
+}
+
+.box-container .box .price span {
+    font-size: 1rem;
+    color: #999;
+    text-decoration: line-through;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* <------------------------------------------ styling for Account Section ---------------------------------------------> */
+
+#account_section {
+    /* height: max-content; */
+}
+
+.account_edit_div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    line-height: 3rem;
+    margin: auto;
+    height: 100%;
+    width: 70%;
+    text-decoration: none;
+    font-size: 1.3rem;
+}
+
+.account_edit_div a {
+    margin: 1rem 0;
+    text-decoration: none;
+    color: #000;
+    border: solid rgb(141, 140, 140);
+    border-radius: 10px;
+    padding: 0.5rem;
+}
+
+
+
+
+.goTop_btn{
+    padding: 0.8rem;
+    background-color: rgb(182, 181, 181);
+    float: right;
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+}
+
+.goTop_btn a{
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000;
+    font-weight: 500;
+}
