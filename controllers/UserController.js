@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs')
 // import JWT_Secret from './viewController'
 const JWT_Secret = 'fwwp project'
 
-const maxAge = 30*24*60*60*1000
+const maxAge = 60*60*1000
 
 const createToken = (id,username) => {
     return jwt.sign({ id: id ,username : username}, JWT_Secret,{expiresIn:maxAge})
