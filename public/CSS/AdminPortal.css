@@ -167,6 +167,10 @@ nav .nav_name {
     align-items: center;
 }
 
+.dashboard_main_heading{
+    font-size: calc(2vh + 2vw);
+    text-align: center;
+}
 
 .graph {
     /* display: flex;
@@ -181,10 +185,6 @@ nav .nav_name {
     scroll-margin-bottom: 0;
 }
 
-.dashboard_main_heading{
-    font-size: 2rem;
-    text-align: center;
-}
 
 
 
@@ -253,14 +253,14 @@ nav .nav_name {
 
 .prod_section_main_heading {
     text-align: center;
-    font-size: 3rem;
+    font-size: calc(2vh + 2vw);
 }
 
 .box-container {
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    padding: 5rem;
+    padding: 3rem;
 }
 
 .box-container .box {
@@ -306,7 +306,7 @@ nav .nav_name {
 }
 
 .box-container .box .price span {
-    font-size: 1rem;
+    font-size: calc(1vh + 1vw);;
     color: #999;
     text-decoration: line-through;
 }
@@ -340,7 +340,7 @@ nav .nav_name {
     height: 100%;
     width: 70%;
     text-decoration: none;
-    font-size: 1.3rem;
+    font-size: calc(1vh + 1vw);
 }
 
 .account_edit_div a {
