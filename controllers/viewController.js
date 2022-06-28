@@ -60,7 +60,9 @@ module.exports.adminportal_get = async (req, res) => {
         result = jwt.verify(req.cookies.jwt_seller, JWT_Secret)
         // seller = await Seller.findOne({username : result.username})
         seller = await Seller.findOne({ _id: new ObjectID(result.id) }).lean()
-
+        if(!seller){
+            return res.redirect('/404');
+        }
         const products = await Product.find({sellerId : seller._id}).lean()
         const seeds = products.filter(prod => prod.category === 'seeds').length
         const fertilizers = products.filter(prod => prod.category === 'fertilizers').length
