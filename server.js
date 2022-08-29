@@ -16,11 +16,11 @@ app.use(bodyParser.json())
 app.use(cookieParser())
 
 app.set('view engine','ejs')
-
+require('dotenv').config()
 
 // database connectivity
 // const dbURI = 'mongodb://localhost:27017/ffsd1'
-const dbURI = 'mongodb+srv://FFSD1:ffsd1@ffsd1.ooswv.mongodb.net/Data?retryWrites=true&w=majority'
+const dbURI = process.env.dbURI
 
 const port = process.env.PORT || 9999        
 mongoose.connect(dbURI)

@@ -4,7 +4,8 @@ const Product = require('../model/product')
 const Crop = require('../model/crop')
 const mongodb = require('mongodb')
 const ObjectID = mongodb.ObjectId
-const JWT_Secret = 'fwwp project'
+require('dotenv').config()
+const JWT_Secret = process.env.JWT_Secret
 
 
 

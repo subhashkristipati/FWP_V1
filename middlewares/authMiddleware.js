@@ -1,7 +1,8 @@
 const jwt = require("jsonwebtoken");
 const Seller = require("../model/seller");
 const User = require('../model/user')
-const JWT_Secret = 'fwwp project'
+require('dotenv').config()
+const JWT_Secret = process.env.JWT_Secret
 
 const checkUser = (req,res,next)=>{
     let token = req.cookies.jwt_user

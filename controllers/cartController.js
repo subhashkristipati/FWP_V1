@@ -1,5 +1,6 @@
 const Cart = require('../model/cart')
-const JWT_Secret = 'fwwp project'
+require('dotenv').config()
+const JWT_Secret = process.env.JWT_Secret
 const jwt = require('jsonwebtoken')
 
 
