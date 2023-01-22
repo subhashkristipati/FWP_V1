@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User</title>
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|fire|outline|emboss|shadow-multiple|fire-animation">
     <script src="https://kit.fontawesome.com/a4b935b8e6.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet'>
     <link rel="stylesheet" href="/CSS/signup.css">
@@ -59,14 +58,15 @@
         </div>
 
         <script>
-
             function preventBack() {
                 window.history.forward();
             }
 
             setTimeout("preventBack()", 0);
 
-            window.onunload = function () { null };
+            window.onunload = function() {
+                null
+            };
 
 
             // FrontEnd Validation
@@ -83,16 +83,13 @@
                 if (!email.includes('@') || !email.includes('.')) {
                     Error.textContent = "Invalid Email"
                     return false
-                }
-                else if (username.length < 6) {
+                } else if (username.length < 6) {
                     Error.textContent = "Username should have a min length of 6"
                     return false;
-                }
-                else if (name.length < 6) {
+                } else if (name.length < 6) {
                     Error.textContent = "Name should have a min length of 6"
                     return false;
-                }
-                else if (password.length < 8) {
+                } else if (password.length < 8) {
                     Error.textContent = "Password should have a min length of 8"
                     return false;
                 }
